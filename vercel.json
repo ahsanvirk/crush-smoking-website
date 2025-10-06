@@ -2,16 +2,16 @@
   "version": 2,
   "routes": [
     {
-      "src": "/support",
-      "dest": "/support/index.html"
+      "src": "/landing",
+      "dest": "/landing/index.html"
     },
     {
-      "src": "/support/",
-      "dest": "/support/index.html"
+      "src": "/landing/",
+      "dest": "/landing/index.html"
     },
     {
       "src": "/(.*)",
-      "dest": "/landing/index.html"
+      "dest": "/support/index.html"
     }
   ]
 }

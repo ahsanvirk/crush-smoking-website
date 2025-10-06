@@ -129,18 +129,19 @@
         }
         
         .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            display: flex;
+            justify-content: center;
             margin: 50px 0;
         }
         
         .stat {
             text-align: center;
-            padding: 30px;
+            padding: 40px 60px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-radius: 15px;
+            max-width: 500px;
+            width: 100%;
         }
         
         .stat-number {
@@ -231,20 +232,8 @@
         <div class="content">
             <div class="stats">
                 <div class="stat">
-                    <div class="stat-number">1M+</div>
-                    <div class="stat-label">Smokers Helped</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">95%</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support Available</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">Free</div>
-                    <div class="stat-label">Always Free</div>
+                    <div class="stat-number">Goal: Help 1M Smokers Quit</div>
+                    <div class="stat-label">Join us in making a difference</div>
                 </div>
             </div>
             

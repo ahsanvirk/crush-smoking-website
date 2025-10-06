@@ -2,6 +2,10 @@
   "version": 2,
   "routes": [
     {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
       "src": "/support",
       "dest": "/support/index.html"
     },
@@ -12,10 +16,6 @@
     {
       "src": "/support/(.*)",
       "dest": "/support/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
     }
   ]
 }

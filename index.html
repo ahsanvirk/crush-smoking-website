@@ -3,51 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrushSmoking - Redirecting...</title>
+    <title>CrushSmoking - Quit Smoking Today</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+            padding: 60px 0;
+        }
+        
+        .header h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 36px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .hero-section h2 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+        
+        .goal-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 60px 0;
         }
-        .redirect-message {
+        
+        .goal-box h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .goal-box p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .feature {
             text-align: center;
             padding: 40px;
-            background: rgba(255,255,255,0.1);
             border-radius: 15px;
-            backdrop-filter: blur(10px);
+            background: #f8f9fa;
+            transition: transform 0.3s ease;
         }
-        .spinner {
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top: 3px solid white;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
+        
+        .feature:hover {
+            transform: translateY(-5px);
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .app-showcase {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px;
+            border-radius: 20px;
+            margin: 60px 0;
+        }
+        
+        .app-showcase h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+        
+        .app-showcase p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1rem;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .content {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="redirect-message">
-        <h1>🚭 CrushSmoking</h1>
-        <div class="spinner"></div>
-        <p>Redirecting to landing page...</p>
-        <p><a href="/landing/" style="color: white; text-decoration: underline;">Click here if you're not redirected automatically</a></p>
+    <div class="container">
+        <div class="header">
+            <h1>🚭 CrushSmoking</h1>
+            <p>Your journey to a smoke-free life starts here</p>
+            <div class="cta-buttons">
+                <a href="#features" class="btn btn-primary">Learn More</a>
+                <a href="#download" class="btn btn-secondary">Download App</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="hero-section">
+                <h2>Break Free From Smoking</h2>
+                <p>CrushSmoking is your personal companion on the journey to a healthier, smoke-free life. Track your progress, overcome cravings, and celebrate every milestone along the way.</p>
+                
+                <div class="goal-box">
+                    <h3>Goal: Help 1M Smokers Quit</h3>
+                    <p>Join us in making a difference - one smoke-free day at a time</p>
+                </div>
+            </div>
+            
+            <div class="features" id="features">
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Smart Tracking</h3>
+                    <p>Track your smoke-free days, money saved, and health improvements with our intuitive interface. See your progress in real-time.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">💪</div>
+                    <h3>Craving Support</h3>
+                    <p>Get instant help when cravings strike with guided breathing exercises and motivational support to help you overcome the urge.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Goals</h3>
+                    <p>Set and achieve your personal milestones with customized challenges and rewards tailored to your quitting journey.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>Your data stays on your device. We never share your personal information with third parties - your privacy is our priority.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Achievement System</h3>
+                    <p>Earn badges and celebrate milestones as you progress on your smoke-free journey. Every day counts!</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Health Insights</h3>
+                    <p>See real-time health improvements and understand the benefits of your smoke-free lifestyle with detailed analytics.</p>
+                </div>
+            </div>
+            
+            <div class="app-showcase" id="download">
+                <h2>📱 Download CrushSmoking</h2>
+                <p>Available on iOS and Android - Start your smoke-free journey today!</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-secondary">Download for iOS</a>
+                    <a href="#" class="btn btn-secondary">Download for Android</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 CrushSmoking. All rights reserved.</p>
+            <p>
+                <a href="/support/">Get Support</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </p>
+        </div>
     </div>
-    
-    <script>
-        // Redirect to landing page
-        window.location.href = '/landing/';
-    </script>
 </body>
 </html>

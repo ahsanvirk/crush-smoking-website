@@ -12,6 +12,10 @@
     {
       "src": "/support/(.*)",
       "dest": "/support/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
     }
   ]
 }
